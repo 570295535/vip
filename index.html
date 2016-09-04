@@ -1,0 +1,105 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<title>VIP</title>
+		
+		<style type="text/css">
+		
+			body{
+				margin:0px;
+				padding:0px;
+			}
+			
+			#container{
+				height:100%;
+				width:800px;
+				margin:0px auto;
+			}
+			
+			#video_iframe{
+				height:500px;
+				width:800px;
+				frameborder:0;
+				marginheight:0px;
+				marginwidth:0px;
+				background:#000000;
+				border:0px;
+			}
+			
+			#video_src{
+				margin:5px auto;
+				height:20px;
+				width:650px;
+			}
+			
+		</style>
+		
+	</head>
+	
+	<body>
+
+		<div id="container">
+		
+			<iframe id="video_iframe">
+			</iframe>
+			
+			<div>
+				请输入视频网址:
+				<input id="video_src" type="text" name="text" value="" />
+			</div>
+			
+			<div>
+				<input type="button" name="button" value="通用接口播放" onclick="javascript:tong();"/> &nbsp;
+				<input type="button" name="button" value="芒果接口播放" onclick="javascript:mgtv();"/> &nbsp;
+				<input type="button" name="button" value="腾讯接口播放" onclick="javascript:qq();"/> &nbsp;
+				<input type="button" name="button" value="优酷接口播放" onclick="javascript:youku();"/> &nbsp;
+				<input type="button" name="button" value="乐视接口播放" onclick="javascript:letv();"/> &nbsp;
+				<input type="button" name="button" value="奇艺接口播放" onclick="javascript:qiyi();"/> &nbsp;
+				<input type="button" name="button" value="关闭视频" onclick="javascript:video_off();"/>
+			</div>
+			
+		</div> 
+		
+		<script type="text/javascript">
+			function tong(){
+				var video_src = document.getElementById("video_src").value;
+				document.getElementById("video_iframe").src = "http://mfjx.jiuli8.com/?url=" + video_src;
+			}//备用：http://jxapi.nepian.com/ckparse/?url=
+			
+			function mgtv(){
+				var video_src = document.getElementById("video_src").value;
+				document.getElementById("video_iframe").src = "http://vip.jiuli8.com/mgvip.php/?url=" + video_src;
+			}
+			
+			function qq(){
+				var video_src = document.getElementById("video_src").value;
+				document.getElementById("video_iframe").src = "http://vip.jiuli8.com/qqvip.php/?url=" + video_src;
+			}
+			
+			function youku(){
+				var video_src = document.getElementById("video_src").value;
+				document.getElementById("video_iframe").src = "http://vip.jiuli8.com/ykvip.php?url=" + video_src;
+			}
+			
+			function letv(){
+				var video_src = document.getElementById("video_src").value;
+				document.getElementById("video_iframe").src = "http://www.avziliao.com/ydisk/letv.php?url=" + video_src;
+			}
+			
+			function qiyi(){
+				var video_src = document.getElementById("video_src").value;
+				document.getElementById("video_iframe").src = "http://jxapi.nepian.com/iqy/?url=" + video_src;
+			}
+			
+			function video_off(){
+				document.getElementById("video_iframe").src = "about:blank";
+			}
+		</script>
+		
+	</body>
+	
+</html>
