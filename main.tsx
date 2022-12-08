@@ -1,5 +1,4 @@
 import blog, { ga, redirects } from "https://deno.land/x/blog/blog.tsx";
-import { unocss_opts } from "./unocss.ts";
 
 blog({
   author: "Dino",
@@ -17,11 +16,8 @@ blog({
   middlewares: [
     ga("UA-XXXXXXXX-X"),
     redirects({
-      "/foo": "/my_post",
-      // you can skip leading slashes too
-      "bar": "my_post2",
+      "/posts": "/posts",
     }),
   ],
-  unocss: unocss_opts, // check https://github.com/unocss/unocss
   favicon: "favicon.ico",
 });
