@@ -1,22 +1,16 @@
 import blog, { ga, redirects } from "https://deno.land/x/blog/blog.tsx";
 
 blog({
-  author: "Dino",
-  title: "My Blog",
-  description: "The blog description.",
-  avatar: "avatar.png",
+  author: "作者狗子",
+  title: "我的博客",
+  description: "这里是博客首页的描述",
+  avatar: "https://deno-avatar.deno.dev/avatar/83a531.svg",
   avatarClass: "rounded-full",
-  links: [
-    { title: "Email", url: "mailto:bot@deno.com" },
-    { title: "GitHub", url: "https://github.com/denobot" },
-    { title: "Twitter", url: "https://twitter.com/denobot" },
-  ],
   lang: "zh",
-  dateStyle: "long", // localised format based on https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
   middlewares: [
-    ga("UA-XXXXXXXX-X"),
     redirects({
       "/posts": "/posts",
+      "/posts2": "/posts2",
     }),
   ],
   favicon: "favicon.ico",
