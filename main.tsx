@@ -1,12 +1,11 @@
-import { 
-  HTMLRewriter 
-} from 'https://ghuc.cc/worker-tools/html-rewriter/index.ts'
+import { html } from "https://deno.land/x/html/mod.ts";
 
-new HTMLRewriter()
-  .on("p", {
-    element(element) { 
-      element.tagName = "h1" 
-    },
-  })
-  .transform(new Response('<p class="red">test</p>'))
-  .text().then(x => console.log(x))
+let languages = ["Rust", "JavaScript", "TypeScript"];
+
+const str = html`
+  <div class="list">
+    <ul>
+      ${languages.map((x) => `<li>${x}</li>`)}
+    </ul>
+  </div>
+`;
