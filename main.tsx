@@ -1,12 +1,7 @@
-import { 
-  HTMLRewriter 
-} from 'https://ghuc.cc/worker-tools/html-rewriter/index.ts'
+import {g} from 'https://deno.land/x/php_world/mod.ts';
+const {eval: php_eval, phpversion, class_exists, exit} = g;
 
-new HTMLRewriter()
-  .on("p", {
-    element(element) { 
-      element.tagName = "h1" 
-    },
-  })
-  .transform(new Response('<p class="red">test</p>'))
-  .text().then(x => console.log(x))
+console.log(await phpversion());
+await php_eval('class Hello {}');
+console.log(await class_exists('Hello'));
+await exit();
