@@ -1,4 +1,4 @@
-import blog from "https://deno.land/x/blog@0.5.0/components.tsx";
+import blog from "https://deno.land/x/blog/blog.tsx";
 
 blog({
   author: "Dino",
